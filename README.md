@@ -13,10 +13,12 @@ state to silently become repository-write authority.
 [![Registered checks](https://img.shields.io/badge/registered_checks-59%2F59_EN_%7C_59%2F59_ID-brightgreen)](#verification-snapshot)
 [![Core regression](https://img.shields.io/badge/core_regression-71%2F71-brightgreen)](#verification-snapshot)
 [![Adapter](https://img.shields.io/badge/C2ModelAdapter-v0.5.5-blue)](adapter/C2ModelAdapter-v0.5.5/README.md)
+[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
 
 **Version 1.0.0  |  Release 1  |  Current release  |  30 August 2026**
 
 [Release Notes](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.0)  |
+[Paper](https://doi.org/10.5281/zenodo.22172273)  |
 [Docs Start](C2COGNITIVE-DOCS-START-HERE.md)  |
 [Deep Dive](C2COGNITIVE-DEEP-DIVE.md)  |
 [Reference](C2COGNITIVE-REFERENCE.md)  |
@@ -1454,7 +1456,6 @@ Recommended assets:
 ```text
 C2Cognitive-v1.0.0-English-Repo.zip
 C2Cognitive-v1.0.0-Indonesia-Repo.zip
-C2Cognitive-v1.0.0-REPO-BUNDLE.zip
 ```
 
 The bilingual bundle contains only the two repository ZIPs.
@@ -1468,13 +1469,26 @@ Research papers and publication artifacts are maintained separately from the sof
 
 # Research
 
-C2Cognitive has a separate bilingual research-paper surface associated with the v1.0.0 release.
+C2Cognitive v1.0.0 is accompanied by the bilingual research paper:
 
-The repo-only software archive does not embed the paper files.
+**C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents**
 
-No C2Cognitive DOI is claimed in this README until an external DOI has actually been assigned to C2Cognitive.
+**Author:** Hafizh Al-Banna  
+**Publication date:** 30 August 2026  
+**Publication type:** Preprint  
+**Publisher:** Zenodo  
+**Paper DOI:** [10.5281/zenodo.22172273](https://doi.org/10.5281/zenodo.22172273)
 
-This prevents the software repository from accidentally reusing a DOI belonging to another project or publication.
+[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
+
+The Zenodo record is the publication surface for both the English and Indonesian editions of the paper under one DOI.
+The repo-only software archives remain intentionally separate and do not embed the paper files.
+
+### Recommended citation
+
+> Hafizh Al-Banna (2026). *C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents*. C2Cognitive Core v1.0.0, Release 1. Zenodo. https://doi.org/10.5281/zenodo.22172273
+
+The paper and the software repository are related but distinct research objects: the paper DOI identifies the publication, while this repository remains the C2Cognitive software/source distribution.
 
 ---
 

@@ -1,0 +1,85 @@
+cff-version: 1.2.0
+
+message: >-
+  If you use C2Cognitive, please cite this v1.0.0 software release.
+  For research use, cite the academic paper listed in preferred-citation.
+
+type: software
+
+title: "C2Cognitive: Convert to Cognitive Engineering"
+
+version: "1.0.0"
+
+date-released: "2026-08-30"
+
+authors:
+  - family-names: "Al-Banna"
+    given-names: "Hafizh"
+    affiliation: "Independent Researcher; PT Arshaka Digital Media Kreasi"
+
+repository-code: "https://github.com/hf8bz/C2Cognitive"
+url: "https://github.com/hf8bz/C2Cognitive"
+
+license: MIT
+
+abstract: >-
+  C2Cognitive (Convert to Cognitive Engineering) is a repository-governed
+  persistent-cognition and bounded-authority system for long-running AI coding
+  agents. It separates durable cognition from repository-write authority and
+  governs how evidence may be admitted, remembered, reused, promoted into
+  Skills, represented as source-bound structural state, projected into a
+  derived Wiki, exposed through bounded Agent Loadouts, and carried across
+  handoff or resume boundaries. C2Cognitive v1.0.0 includes typed L0-L3 Memory,
+  provenance and freshness controls, exact write and rollback authority,
+  Bounded Read v2, Adaptive Context Representation Planning, cognitive and
+  repository emergency controls, progress-liveness self-audit, workflow and
+  mobile governance, and a bundled C2ModelAdapter v0.5.5 host/runtime boundary.
+  Persistence, model output, cache state, routing state, and worker output do
+  not automatically become evidence or repository mutation authority.
+
+keywords:
+  - "C2Cognitive"
+  - "Cognitive Engineering"
+  - "AI coding agents"
+  - "Agentic software engineering"
+  - "Persistent cognition"
+  - "Persistent memory"
+  - "Repository governance"
+  - "AI agent governance"
+  - "Bounded authority"
+  - "Bounded Read v2"
+  - "BR-v2"
+  - "Trust-typed memory"
+  - "Adaptive context representation"
+  - "Progress liveness"
+  - "Self-audit"
+  - "Provenance"
+  - "Reproducibility"
+  - "Verification"
+  - "Handoff and resume"
+  - "Context management"
+  - "Model adapter"
+
+preferred-citation:
+  type: article
+
+  title: "C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents"
+
+  authors:
+    - family-names: "Al-Banna"
+      given-names: "Hafizh"
+      affiliation: "Independent Researcher; PT Arshaka Digital Media Kreasi"
+
+  doi: "10.5281/zenodo.22172273"
+  url: "https://doi.org/10.5281/zenodo.22172273"
+
+  year: 2026
+  date-published: "2026-08-30"
+  status: preprint
+  license: CC-BY-4.0
+  languages:
+    - en
+    - id
+
+  publisher:
+    name: "Zenodo"

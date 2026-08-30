@@ -24,7 +24,6 @@ state to silently become repository-write authority.
 [Reference](C2COGNITIVE-REFERENCE.md)  |
 [Entry Modes](C2COGNITIVE-ENTRY-MODE-DECISION-MATRIX.md)  |
 [File Map](C2COGNITIVE-FILE-MAP.md)  |
-[Changelog](CHANGELOG.md)
 
 ---
 

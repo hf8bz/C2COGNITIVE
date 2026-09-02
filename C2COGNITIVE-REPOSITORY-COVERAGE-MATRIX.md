@@ -1,15 +1,15 @@
 # C2Cognitive Repository Coverage Matrix
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 ## Purpose
 
-This is the exhaustive public-documentation coverage ledger for the audited C2Cognitive v1.0.0 English repo-only
+This is the exhaustive public-documentation coverage ledger for the audited C2Cognitive v1.0.2 English repo-only
 package used to build this documentation surface.
 
-The source package contains **286 files**. Of those, **31** are under the internal `docs/`
+The source package contains **298 files**. Of those, **33** are under the internal `docs/`
 engineering-reference tree. Per the public-repository packaging decision, those internal documents are not
-republished in this public-doc bundle. The remaining **255 non-internal repository files** are mapped
+republished in this public-doc bundle. The remaining **265 non-internal repository files** are mapped
 below to a public documentation owner.
 
 A path appearing in this matrix means the public docs account for the shipped surface. It does not mean the public
@@ -18,10 +18,10 @@ doc replaces the executable file or grants its authority.
 ## Coverage result
 
 ```text
-source files audited                         286
-non-internal files path-mapped               255 / 255
-internal docs topic-mapped to public guides   31 / 31
-source-file surfaces accounted for           286 / 286
+source files audited                         298
+non-internal files path-mapped               265 / 265
+internal docs topic-mapped to public guides   33 / 33
+source-file surfaces accounted for           298 / 298
 unmapped functional surfaces                   0
 ```
 
@@ -352,3 +352,22 @@ Coverage here means:
 5. operational authority remains in the actual shipped control-plane/executable files.
 
 See [Docs Start Here](C2COGNITIVE-DOCS-START-HERE.md).
+## v1.0.2 coverage delta
+
+Terminal reconciliation is covered across AgentRun state, handoff/cursor projection, successor admission, evidence binding, claim consumption, static verification, directed selftest, public documentation, flowchart, and release-paper surfaces.
+## v1.0.1-v1.0.2 additions
+
+| Repository path | Public documentation owner |
+| --- | --- |
+| `.agent/runbooks/workflow-convergence.md` | [C2COGNITIVE-BLOCKER-CONVERGENCE-GUIDE.md](C2COGNITIVE-BLOCKER-CONVERGENCE-GUIDE.md) |
+| `.agent/workflow-convergence.schema.md` | [C2COGNITIVE-SCHEMA-STATE-CATALOG.md](C2COGNITIVE-SCHEMA-STATE-CATALOG.md) |
+| `docs/graph-engineering/86-workflow-convergence.md` | [C2COGNITIVE-BLOCKER-CONVERGENCE-GUIDE.md](C2COGNITIVE-BLOCKER-CONVERGENCE-GUIDE.md) |
+| `scripts/convergence/watch.py` | [C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
+| `scripts/lib/c2convergence.py` | [C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
+| `scripts/selftest/workflow_convergence.py` | [C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
+| `scripts/verify/workflow_convergence.py` | [C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
+| `scripts/lib/c2terminal.py` | [C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md](C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md) |
+| `scripts/handoff/terminal_reconcile.py` | [C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md](C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md) |
+| `scripts/verify/terminal_reconciliation.py` | [C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md](C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md) |
+| `scripts/selftest/terminal_reconciliation.py` | [C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md](C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md) |
+| `docs/graph-engineering/87-terminal-reconciliation-successor-admission.md` | [C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md](C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md) |

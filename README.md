@@ -8,22 +8,41 @@ C2Cognitive makes durable agent cognition more **bounded, inspectable, evidence-
 auditable** without allowing remembered knowledge, Skills, Wiki state, worker output, model-routing state, or cache
 state to silently become repository-write authority.
 
-[![Release](https://img.shields.io/badge/release-v1.0.0-blue)](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.0)
+[![Release](https://img.shields.io/badge/release-v1.0.2-blue)](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.2)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Registered checks](https://img.shields.io/badge/registered_checks-59%2F59_EN_%7C_59%2F59_ID-brightgreen)](#verification-snapshot)
-[![Core regression](https://img.shields.io/badge/core_regression-71%2F71-brightgreen)](#verification-snapshot)
+[![Registered checks](https://img.shields.io/badge/registered_checks-63%2F63_EN_%7C_63%2F63_ID-brightgreen)](#verification-snapshot)
+[![Terminal regression](https://img.shields.io/badge/terminal_regression-21%2F21_EN_%7C_21%2F21_ID-brightgreen)](#verification-snapshot)
 [![Adapter](https://img.shields.io/badge/C2ModelAdapter-v0.5.5-blue)](adapter/C2ModelAdapter-v0.5.5/README.md)
-[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
+[![v1.0.0 Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
 
-**Version 1.0.0  |  Release 1  |  Current release  |  30 August 2026**
+**Version 1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
-[Release Notes](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.0)  |
-[Paper](https://doi.org/10.5281/zenodo.22172273)  |
+[Release Notes](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.2)  |
+[v1.0.0 Paper](https://doi.org/10.5281/zenodo.22172273)  |
 [Docs Start](C2COGNITIVE-DOCS-START-HERE.md)  |
 [Deep Dive](C2COGNITIVE-DEEP-DIVE.md)  |
 [Reference](C2COGNITIVE-REFERENCE.md)  |
 [Entry Modes](C2COGNITIVE-ENTRY-MODE-DECISION-MATRIX.md)  |
 [File Map](C2COGNITIVE-FILE-MAP.md)  |
+[Changelog](CHANGELOG.md)
+
+---
+
+## What's new in v1.0.2
+
+C2Cognitive v1.0.2 hardens the boundary between terminal execution truth and continuity bookkeeping. A stale
+`open` cursor cannot reactivate an AgentRun that is already `COMPLETED`. A new successor is admitted only after
+verified terminal completion and only with evidence-bound `terminal_successor` metadata. Its `basis_claim_id` is
+consumable once by semantic claim identity, so changing run/task IDs, class, semantic delta, model/session, or
+copying evidence to another path cannot turn one completed claim into an endless successor chain.
+
+This release keeps the v1.0.1 Workflow Convergence model, BR-v2, Progress Liveness, CEA/BEA, ACRP, persistent
+cognition, adapter v0.5.5, and bounded physical ingestion intact. Terminal reconciliation can refuse continuation;
+it does not grant repository-write authority.
+
+**Release evidence:** 63/63 registered checks pass in both English and Indonesian editions; terminal reconciliation
+passes 21/21 retained directed cases per edition. Additional release-level adversarial fuzz and clean-room patch
+replay are shipped in the release evidence package.
 
 ---
 
@@ -158,7 +177,7 @@ The objective is to make durable cognition answerable:
 
 # Core design principles
 
-C2Cognitive v1.0.0 can be summarized through six principles.
+C2Cognitive Version 1 can be summarized through six principles.
 
 ### 1. Evidence-bounded persistence
 
@@ -199,14 +218,15 @@ A cache miss must remain a correct execution path.
 
 ---
 
-# What ships in v1.0.0
+# What ships in v1.0.2
 
-C2Cognitive v1.0.0 is the first public Core release.
+C2Cognitive v1.0.2 is the current corrective Core release. It retains the Version 1 architecture while hardening
+workflow convergence, progress-state admission, external-wait evidence, and resume composition.
 
 Major capability families include:
 
 1. Three-layer context architecture: `AGENTS.md` -> scopes -> runbooks
-2. 39 stable Core rules and 45 routing rows
+2. 40 stable Core rules and 46 routing rows
 3. Three explicit entry modes and bounded PHASE 0-8 adoption/bootstrap flow
 4. Goal contracts, Goal inheritance, requirements provenance, and plan-to-document conversion
 5. Exact `ACTUAL_WRITE_SET` planning, fresh pre-state checks, rollback authority, and incident rollback
@@ -218,19 +238,25 @@ Major capability families include:
 11. Failure Memory, preflight recall, Durable Lessons, correction propagation, and lesson reconfirmation
 12. Verified Skill lifecycle, source-bound structural candidates, and project-only derived Wiki generations
 13. Bounded Agent Loadouts, proportional dispatch, batching, reusable worker sessions, assignment epochs, leases/fences
-14. Coordinator/single-writer canonical effects, state locking/migration, Goal/effect serialization, effect-time revalidation
+14. Coordinator/single-writer canonical effects, state locking/migration, Goal/effect serialization, and
+    effect-time revalidation
 15. Compaction handoff, resume capsules, resource epochs, budget suspension, and durable long-session resume
-16. Workflow discipline, blocker convergence, simplification ladder, ratchet loops, and progress-liveness self-audit
+16. Workflow discipline, blocker convergence, simplification ladder, ratchet loops, Progress Liveness, bounded
+    self-audit, and CORE-40 Workflow Convergence
 17. Sensitive-text admission, repository-path containment, untrusted-content handling, and security purge workflows
 18. CEA persistent-cognition emergency authority and BEA v2 repository-write emergency authority as separate planes
 19. Adaptive Context Representation Planning (ACRP) below semantic/authority selection
-20. Runtime-scoped C2ModelAdapter v0.5.5 with capability admission, effective-route rebinding, failover isolation, cache awareness, structured tool-call validation, and deterministic simulations
-21. Test-to-workflow mapping, coverage backfill, retrieval golden-set/rubric scaffolds, and executable-versus-prose contradiction handling
-22. Backend/API, frontend, UI/UX, data-schema, infra/deploy, QA/tooling, payments-sensitive, Android, iOS, and shared-mobile scopes
+20. Runtime-scoped C2ModelAdapter v0.5.5 with capability admission, effective-route rebinding, failover isolation,
+    cache awareness, structured tool-call validation, and deterministic simulations
+21. Test-to-workflow mapping, coverage backfill, retrieval golden-set/rubric scaffolds, and executable-versus-prose
+    contradiction handling
+22. Backend/API, frontend, UI/UX, data-schema, infra/deploy, QA/tooling, payments-sensitive, Android, iOS, and
+    shared-mobile scopes
 23. Database-migration, UI-audit, post-deploy-QA, mobile build/release, device-QA, and store-submission procedures
-24. 95 shipped Python scripts spanning scanners, gates, validators, cognitive tools, selftests, shared libraries, state/goal/handoff/emergency utilities, and provenance export
-25. 59 registered aggregate verification invocations plus populated/adversarial selftest surfaces
-26. Centralized configuration with 306 measured keys and 228 thresholds
+24. 103 shipped Python scripts spanning scanners, gates, validators, convergence/progress controllers, cognitive tools,
+    selftests, shared libraries, state/goal/handoff/emergency utilities, and provenance export
+25. 63 registered aggregate verification invocations plus populated/adversarial selftest surfaces
+26. Centralized configuration with 313 measured keys and 235 thresholds
 27. Typed graph schemas with 20 node kinds and 22 edge kinds plus graph validation
 28. 13 staged/continuity prompts plus 3 repository-entry prompts
 29. English and Indonesian executable editions
@@ -264,10 +290,10 @@ Loaded for the active procedure
 
 The current executable edition contains:
 
-* 39 Core rules;
-* 45 routing rows;
+* 40 Core rules;
+* 46 routing rows;
 * 10 non-template scopes;
-* 40 non-template runbooks;
+* 41 non-template runbooks;
 * 13 staged prompts.
 
 This architecture is intended to keep stable invariants stable while loading detailed procedure only when the relevant
@@ -667,7 +693,7 @@ Direct filesystem edits that ignore the protocol are outside this cooperative gu
 
 Large artifacts should not automatically become large model context.
 
-C2Cognitive v1.0.0 ships a bounded physical read substrate with controls for:
+C2Cognitive v1.0.2 ships a bounded physical read substrate with controls for:
 
 * line count;
 * UTF-8 output bytes;
@@ -699,7 +725,7 @@ Ordinary callers cannot raise hard model-view ceilings merely by changing reques
 After repeated blind sequential windows, continuation can return `STRATEGY_REVIEW_REQUIRED` rather than silently
 turning bounded reading into full-file scrolling.
 
-BR-v2 is a reader-contract generation inside **C2Cognitive v1.0.0**.
+BR-v2 is a reader-contract generation inside **C2Cognitive Version 1**.
 
 It is not a separate product version.
 
@@ -758,6 +784,11 @@ The handoff path can use:
 Checkpoint persistence itself remains subject to repository write authority.
 
 A checkpoint does not manufacture permission to write itself into an otherwise unauthorized target tree.
+
+For v1.0.2, `RESUME` accepts the newest valid durable HANDOFF/cursor or the newest valid
+`C2COGNITIVE_RESUME_CAPSULE v1`. If durable state is present but malformed, partial, stale, or contradictory, resume
+fails closed rather than silently bypassing it with a portable capsule. Existing plans are revalidated and reused when
+valid; a new plan is created only when one is absent or a declared CORE-40 invalidator requires replanning.
 
 See:
 
@@ -834,13 +865,45 @@ C2Cognitive can classify states such as:
 * accounting inconsistency;
 * stagnation.
 
-A liveness finding may trigger bounded diagnosis or replanning.
+A liveness finding may feed bounded recovery, but repeated recovery is governed by CORE-40 Workflow Convergence.
 
 It cannot manufacture a write row, bypass Goal authority, or turn a diagnostic classification into permission.
 
 See:
 
 **[Progress Liveness & Self-Audit](C2COGNITIVE-PROGRESS-LIVENESS-SELF-AUDIT-EN.md)**
+
+---
+
+# Workflow Convergence
+
+Progress detection and recovery termination are separate responsibilities. v1.0.1 adds a canonical semantic frontier
+covering goal revision, task, next action, evidence, decision, actual write set, blockers, gate state, and completion
+state. Repeated activity does not count as progress when that frontier does not change.
+
+The normal unchanged-frontier sequence is:
+
+```text
+unchanged observation
+        |
+        v
+NO_PROGRESS_OBSERVED
+        |
+        v
+DIAGNOSE_ONCE
+        |
+        v
+still unchanged
+        |
+        v
+STOP_BUSY_LIVELOCK
+```
+
+Re-planning is accepted only through the configured closed invalidator set. Completion is sticky, verification reuse
+requires an exact verification identity plus prior `PASS`, and external waits require evidence binding.
+
+Workflow Convergence is non-authoritative: it decides whether reasoning/recovery may continue, wait, replan, close, or
+stop. It does **not** create repository-write authority.
 
 ---
 
@@ -896,7 +959,7 @@ See:
 
 # Runtime-scoped model adapter
 
-C2Cognitive v1.0.0 bundles **C2ModelAdapter v0.5.5** under:
+C2Cognitive v1.0.2 bundles **C2ModelAdapter v0.5.5** under:
 
 ```text
 adapter/C2ModelAdapter-v0.5.5/
@@ -1108,8 +1171,8 @@ rather than being copied into unrelated prose surfaces.
 
 The current generated inventory records:
 
-* 306 configuration keys;
-* 228 digit-aware numeric thresholds.
+* 313 configuration keys;
+* 235 digit-aware numeric thresholds.
 
 Configuration drift is itself auditable.
 
@@ -1137,7 +1200,7 @@ See:
 
 # Core / Framework boundary
 
-This repository release is the **C2Cognitive Core v1.0.0** distribution.
+This repository release is the **C2Cognitive Core v1.0.2** distribution.
 
 Core owns repository-resident governance and cognition surfaces such as:
 
@@ -1195,7 +1258,7 @@ It does not override those executable contracts.
 
 # Public documentation surface
 
-C2Cognitive v1.0.0 uses a repository-root public documentation layer. The public docs do not replace the control
+C2Cognitive v1.0.2 uses a repository-root public documentation layer. The public docs do not replace the control
 plane; they explain and map it. The current public layer is deliberately broader than the original C2GRAPH-style
 surface because C2Cognitive has persistent-cognition, state, orchestration, and verifier families that need their own
 public coverage.
@@ -1217,9 +1280,9 @@ public coverage.
 | Core rules, router, scopes, config, stable control-plane metadata | [Control Plane Catalog](C2COGNITIVE-CONTROL-PLANE-CATALOG.md) |
 | Every shipped runbook | [Runbook Catalog](C2COGNITIVE-RUNBOOK-CATALOG.md) |
 | Schemas, ledgers, runtime state and generated-path contracts | [Schema and Runtime State Catalog](C2COGNITIVE-SCHEMA-STATE-CATALOG.md) |
-| All 306 config keys / 228 thresholds | [Configuration Reference](C2COGNITIVE-CONFIGURATION-REFERENCE.md) |
+| All 313 config keys / 235 thresholds | [Configuration Reference](C2COGNITIVE-CONFIGURATION-REFERENCE.md) |
 | All entry/staged/continuity prompts | [Prompt Catalog](C2COGNITIVE-PROMPT-CATALOG.md) |
-| All 95 scripts and aggregate verification topology | [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
+| All 103 scripts and registered verification topology | [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
 
 ## Subsystem guides
 
@@ -1251,86 +1314,68 @@ Indonesian public companion files are also shipped for ACRP, CEA, emergency auth
 
 ## Repository coverage status
 
-The audited English repo-only source package has 286 files. Thirty-one files are under the internal `docs/`
-engineering-reference tree and are intentionally omitted from this public-doc package. The remaining **255/255
-non-internal shipped files have an exact path-to-public-doc owner** in the repository coverage matrix.
+The v1.0.2 repo-only package contains **298 physical files per language edition**: **271 Core distribution files** plus
+**27 bundled C2ModelAdapter v0.5.5 files**.
 
-The 31 internal engineering-reference files are also covered at the functional-topic level: **31/31 are mapped to
-root public replacements** rather than republished. The documentation model therefore accounts for **286/286 source
-file surfaces with 0 unmapped functional areas**.
+The previous v1.0.0 public coverage matrix remains predecessor evidence. For v1.0.2, public documentation is
+validated against the current 298-file repository surface with repository-aware link resolution. Historical coverage
+results are not relabeled as current-release proof; current claims are limited to the release-specific docs QA and
+repository verification evidence shipped with v1.0.2.
 
-Path mapping is necessary but not sufficient by itself, so each major functional family also has a substantive guide
-or catalog. The public layer covers root governance/onboarding, all 39 Core invariants, 45 routes, all scopes, all
-41 runbook files, all 16 prompt surfaces, `.agent` schemas/state, evaluation scaffolds, all 95 Python scripts, and all
-27 bundled adapter files.
-
-These public docs remain outside the semantic meaning of `.agent/distribution-files.txt`; explanatory documentation
-must not silently change installer authority or measured executable-corpus counts.
+Explanatory public documentation remains outside the semantic meaning of `.agent/distribution-files.txt`; adding or
+editing README/public guides must not silently change installer authority or measured executable-corpus counts.
 
 ---
 
 # Public documentation policy
 
-C2Cognitive keeps its GitHub-facing documentation at repository root through `README.md` and the `C2COGNITIVE-*.md` public guides. Internal `docs/` engineering-reference files are not part of the public-doc bundle. Their functional topics are represented through the public guides/catalogs instead. These guides explain the system and navigate operators to shipped executable contracts; they do not create a second authority plane.
+C2Cognitive keeps its GitHub-facing documentation at repository root through `README.md` and the
+`C2COGNITIVE-*.md` public guides. Internal `docs/` engineering-reference files are not part of the public-doc bundle.
+Their functional topics are represented through the public guides/catalogs instead. These guides explain the system
+and navigate operators to shipped executable contracts; they do not create a second authority plane.
 
-Operational authority remains in `AGENTS.md`, `.agent/config.yml`, current scopes, runbooks, schemas, entry prompts, and executable validators.
+Operational authority remains in `AGENTS.md`, `.agent/config.yml`, current scopes, runbooks, schemas, entry prompts,
+and executable validators.
 
 ---
 
 # Verification snapshot
 
-The frozen C2Cognitive v1.0.0 release acceptance recorded the following bounded results.
+C2Cognitive v1.0.2 uses bounded current-tree evidence. The aggregate `verify/all.py` wrapper exhibited an
+orchestration timeout in this sandbox, so its interrupted run is counted as neither PASS nor repository FAIL. The
+registered checks were therefore rerun serially, each in a fresh process with an explicit timeout.
 
 | Surface | Result |
 | --- | ---: |
-| Registered release checks  -  English | **59/59 PASS** |
-| Registered release checks  -  Indonesian | **59/59 PASS** |
-| Core regression suite | **71/71 PASS** |
-| C2ModelAdapter v0.5.5 unit collection | **74 PASS** |
-| Adapter router-combination simulation | **30,005/30,005 PASS** |
-| Adapter effective-route simulation | **50,001/50,001 PASS** |
-| EN/ID executable Python path parity | **95/95 exact paths** |
-| Current Python syntax audit | **215/215 PASS** |
-| Graphviz DOT compile audit | **97/97 PASS** |
-| Relative Markdown link audit in frozen full release | **244/244 PASS** |
+| Registered process-isolated checks | **63/63 PASS EN + 63/63 PASS ID** |
+| Vacuous template-corpus observations | **8 per edition; populated selftest run separately PASS** |
+| Terminal reconciliation directed regression | **21/21 PASS per edition** |
+| Terminal reconciliation independent randomized oracle | **100,000 cases, 0 mismatches** |
+| Successor-chain simulation | **10,000 chains x 12 attempts, 0 claim-reuse violations** |
+| Assurance replay | **44/44 PASS per edition** |
+| Workflow Convergence | **current registered verifier + selftest PASS per edition** |
+| Progress Liveness | **current registered verifier + selftest PASS per edition** |
+| Runtime Resume | **current registered verifier + selftest PASS per edition** |
+| Blocker Convergence | **15/15 PASS per edition** |
+| Public-doc link resolution | **1,065 links checked; 0 issues** |
+| Flowchart compilation | **101/101 DOT have PNG + SVG; 0 issues** |
+| Clean-room v1.0.0 -> v1.0.2 patch parity | **298/298 exact paths + SHA-256 + file-mode parity, EN and ID** |
 
-The registered aggregate verifier reports **8 vacuous checks per pristine language edition** where the template
-intentionally contains no runtime-generated state yet.
-
-Those results are not relabeled as proof of populated-runtime behavior.
-
-The repo-only release packaging was also checked for exact manifest parity:
-
-* **259/259** Core manifest entries present per language edition;
-* **0** Core manifest hash mismatches;
-* **27/27** bundled adapter files present per language edition;
-* English/Indonesian adapter path sets are identical;
-* **0** adapter hash mismatches across language packages;
-* no standalone paper artifacts are included in the repo-only release package.
-
-These are finite deterministic/process/package results.
-
-They do **not** establish:
-
-* universal bug absence;
-* universal security;
-* arbitrary crash/power-loss safety;
-* distributed-consensus safety;
-* live-provider correctness or uptime;
-* guaranteed cache-hit rate;
-* guaranteed latency/token/cost improvement;
-* improved foundation-model reasoning;
-* improved developer productivity;
-* correctness on every future OS/runtime/provider version.
+The v1.0.0 Release 1 and v1.0.1 Corrective Release 2 results remain historical predecessor evidence and are not
+silently relabeled as v1.0.2 reruns. These results are finite deterministic/process/package evidence. They do
+**not** establish universal bug absence, universal security, arbitrary crash/power-loss safety, distributed-consensus
+safety, live-provider correctness or uptime, guaranteed cache-hit/latency/token/cost improvement, improved
+foundation-model reasoning, improved developer productivity, or correctness on every future OS/runtime/provider
+version.
 
 The correct release claim is therefore **bounded verification**, not universal proof.
 
 ---
 
 <details>
-<summary><strong>Full C2Cognitive v1.0.0 capability map</strong></summary>
+<summary><strong>Full C2Cognitive v1.0.2 capability map</strong></summary>
 
-Version 1 includes the following major capability families:
+Version 1 current release includes the following major capability families:
 
 1. Three-layer context architecture
 2. Three explicit entry modes
@@ -1393,6 +1438,13 @@ Version 1 includes the following major capability families:
 59. Cache-aware provider/runtime handling
 60. Heterogeneous failover state isolation
 61. Bilingual executable release surface
+62. CORE-40 Workflow Convergence / anti-livelock termination
+63. Sticky completion and closed re-plan invalidators
+64. PASS-only verification reuse bound to exact verification identity
+65. Evidence-bound external wait and strict progress-state admission
+66. Resume-plan revalidation with portable-capsule / durable-state composition
+67. Cross-plane terminal reconciliation over AgentRun, Evaluation, cursor, and handoff state
+68. Evidence-bound successor admission with consumable semantic claim identity
 
 See [CHANGELOG.md](CHANGELOG.md) and the linked internal documentation for the exact shipped contracts.
 
@@ -1453,8 +1505,9 @@ The public software release is intentionally **repo-only**.
 Recommended assets:
 
 ```text
-C2Cognitive-v1.0.0-English-Repo.zip
-C2Cognitive-v1.0.0-Indonesia-Repo.zip
+C2Cognitive-v1.0.2-English-Repo.zip
+C2Cognitive-v1.0.2-Indonesia-Repo.zip
+C2Cognitive-v1.0.2-REPO-BUNDLE.zip
 ```
 
 The bilingual bundle contains only the two repository ZIPs.
@@ -1468,26 +1521,32 @@ Research papers and publication artifacts are maintained separately from the sof
 
 # Research
 
-C2Cognitive v1.0.0 is accompanied by the bilingual research paper:
+The currently assigned Zenodo DOI belongs to the **v1.0.0 Release 1 paper**, not to the v1.0.2 software release:
 
 **C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents**
 
-**Author:** Hafizh Al-Banna  
-**Publication date:** 30 August 2026  
-**Publication type:** Preprint  
-**Publisher:** Zenodo  
+**Author:** Hafizh Al-Banna
+
+**Publication date:** 30 August 2026
+
+**Publication type:** Preprint
+
+**Publisher:** Zenodo
+
 **Paper DOI:** [10.5281/zenodo.22172273](https://doi.org/10.5281/zenodo.22172273)
 
-[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
+[![v1.0.0 Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
 
-The Zenodo record is the publication surface for both the English and Indonesian editions of the paper under one DOI.
-The repo-only software archives remain intentionally separate and do not embed the paper files.
+The v1.0.2 Release Paper is a separate publication object. This README does **not** reuse the
+v1.0.0 DOI as a v1.0.2 DOI. A v1.0.2 paper DOI should be added only after Zenodo actually assigns it.
 
-### Recommended citation
+### Recommended citation for the published predecessor paper
 
-> Hafizh Al-Banna (2026). *C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents*. C2Cognitive Core v1.0.0, Release 1. Zenodo. https://doi.org/10.5281/zenodo.22172273
+> Hafizh Al-Banna (2026). *C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents*.
+> C2Cognitive Core v1.0.0, Release 1. Zenodo. https://doi.org/10.5281/zenodo.22172273
 
-The paper and the software repository are related but distinct research objects: the paper DOI identifies the publication, while this repository remains the C2Cognitive software/source distribution.
+The paper and software repository are related but distinct research objects. The predecessor paper DOI identifies the
+published v1.0.0 paper; this repository currently identifies the v1.0.2 software release.
 
 ---
 

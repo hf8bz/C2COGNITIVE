@@ -1,10 +1,10 @@
 # C2Cognitive Script and Verification Catalog
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 ## Purpose
 
-C2Cognitive v1.0.0 ships 95 Python files under `scripts/`. The scripts are not one undifferentiated execution pool:
+C2Cognitive v1.0.2 ships 103 Python files under `scripts/`. The scripts are not one undifferentiated execution pool:
 pre-authority scanners are intentionally narrow, mutating tools have their own authority contracts, validators fail
 closed, and selftests exercise populated/adversarial states that a pristine template may not contain.
 
@@ -14,6 +14,7 @@ closed, and selftests exercise populated/adversarial states that a pristine temp
 | --- | --- |
 | `scripts/agent/` | Host-neutral agent coordination, adapter capability, representation, lease, loadout, and session tools. |
 | `scripts/budget/` | Resource-budget accounting and suspension checks. |
+| `scripts/convergence/` | Workflow-convergence semantic-frontier watcher and classification surface. |
 | `scripts/emergency/` | CEA/BEA proposal, validation, and effect tooling. |
 | `scripts/goal/` | Goal gate/projected state and Goal mutation tooling. |
 | `scripts/graph/` | Typed graph validation. |
@@ -35,7 +36,7 @@ closed, and selftests exercise populated/adversarial states that a pristine temp
 | `scripts/verify/` | Fail-closed corpus, contract, identity, authority, hygiene, and integrity verifiers. |
 | `scripts/wiki/` | Derived Wiki validation/build tool. |
 
-## Complete 95-file script inventory
+## Complete 103-file script inventory
 
 | Script | Family | Public role |
 | --- | --- | --- |
@@ -102,7 +103,7 @@ closed, and selftests exercise populated/adversarial states that a pristine temp
 | [`scripts/state/lock.py`](scripts/state/lock.py) | `state` | Cooperative local lease/lock/fencing primitive; not an OS security boundary. |
 | [`scripts/state/migrate.py`](scripts/state/migrate.py) | `state` | Dry-run-by-default state schema migration; `--apply` is mutating. |
 | [`scripts/structural/core.py`](scripts/structural/core.py) | `structural` | Structural-candidate validation/operations. |
-| [`scripts/verify/all.py`](scripts/verify/all.py) | `verify` | Aggregate runner for all 59 registered checks in isolated child interpreters. |
+| [`scripts/verify/all.py`](scripts/verify/all.py) | `verify` | Aggregate runner for all 63 registered checks in isolated child interpreters. |
 | [`scripts/verify/ambiguity.py`](scripts/verify/ambiguity.py) | `verify` | Verifier for `ambiguity` contract/invariant; participates in the fail-closed verification surface where registered. |
 | [`scripts/verify/attestation.py`](scripts/verify/attestation.py) | `verify` | Verifier for `attestation` contract/invariant; participates in the fail-closed verification surface where registered. |
 | [`scripts/verify/bounded_emergency.py`](scripts/verify/bounded_emergency.py) | `verify` | Verifier for `bounded-emergency` contract/invariant; participates in the fail-closed verification surface where registered. |
@@ -135,9 +136,22 @@ closed, and selftests exercise populated/adversarial states that a pristine temp
 | [`scripts/verify/width.py`](scripts/verify/width.py) | `verify` | Verifier for `width` contract/invariant; participates in the fail-closed verification surface where registered. |
 | [`scripts/wiki/build.py`](scripts/wiki/build.py) | `wiki` | Derived Wiki build/validation surface. |
 
+## v1.0.1-v1.0.2 script additions
+
+| Script | Family | Public role |
+| --- | --- | --- |
+| [`scripts/convergence/watch.py`](scripts/convergence/watch.py) | `convergence` | Workflow-convergence semantic-frontier watcher/classifier surface. |
+| [`scripts/handoff/terminal_reconcile.py`](scripts/handoff/terminal_reconcile.py) | `handoff` | Operator-facing cross-plane terminal reconciliation and successor-admission gate. |
+| [`scripts/lib/c2convergence.py`](scripts/lib/c2convergence.py) | `lib` | Shared workflow-convergence classifier/policy helper; does not grant repository authority. |
+| [`scripts/lib/c2terminal.py`](scripts/lib/c2terminal.py) | `lib` | Shared terminal truth and evidence-bound successor-admission helper; refusal authority only. |
+| [`scripts/selftest/terminal_reconciliation.py`](scripts/selftest/terminal_reconciliation.py) | `selftest` | Populated/adversarial regression for terminal truth, successor admission, and claim reuse. |
+| [`scripts/selftest/workflow_convergence.py`](scripts/selftest/workflow_convergence.py) | `selftest` | Directed, finite-state, and deterministic-fuzz workflow-convergence regression. |
+| [`scripts/verify/terminal_reconciliation.py`](scripts/verify/terminal_reconciliation.py) | `verify` | Static/integration verifier for terminal reconciliation surfaces and resume wiring. |
+| [`scripts/verify/workflow_convergence.py`](scripts/verify/workflow_convergence.py) | `verify` | Static/integration verifier for Workflow Convergence surfaces. |
+
 ## Aggregate verifier topology
 
-[`scripts/verify/all.py`](scripts/verify/all.py) registers 59 check invocations. It runs ordinary validators and
+[`scripts/verify/all.py`](scripts/verify/all.py) registers 63 check invocations. It runs ordinary validators and
 selftests in isolated child interpreters; the assurance selftest is split into four independent chunks. The aggregate
 fails if any registered check fails. A separate strict-vacuous mode can also fail when a check inspected an empty
 corpus.
@@ -202,10 +216,16 @@ Registered check entrypoints/invocations are:
 * `scripts/selftest/runtime_resume.py`
 * `scripts/selftest/read_substrate.py`
 * `scripts/selftest/read_v2.py`
+* `scripts/verify/workflow_convergence.py`
+* `scripts/verify/terminal_reconciliation.py`
+* `scripts/selftest/workflow_convergence.py`
+* `scripts/selftest/terminal_reconciliation.py`
 * `scripts/selftest/run.py`
 
 The list contains repeated assurance invocations for distinct chunks; therefore invocation count and unique script
 count are intentionally different.
+
+For the v1.0.2 release freeze, the aggregate wrapper exhibited an orchestration timeout in this sandbox. The same 63 registered invocations were therefore executed serially in fresh child processes; all 63 passed per edition. The interrupted wrapper itself is not counted as PASS or repository FAIL.
 
 ## Pre-authority execution boundary
 

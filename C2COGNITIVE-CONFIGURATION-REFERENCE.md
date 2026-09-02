@@ -1,12 +1,12 @@
 # C2Cognitive Configuration Reference
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 ## Purpose
 
-This is the exhaustive public index for the shipped `.agent/config.yml` template in C2Cognitive v1.0.0. It uses the
+This is the exhaustive public index for the shipped `.agent/config.yml` template in C2Cognitive v1.0.2. It uses the
 same indentation-based dotted-key interpretation as the shipped static audit helper and therefore enumerates the
-same **306 configuration keys** measured by `scripts/verify/counts.py`.
+same **313 configuration keys** measured by `scripts/verify/counts.py`.
 
 This page documents template/configuration shape. Runtime authority remains in the actual `.agent/config.yml` of the
 adopted repository and the procedures/validators that consume it.
@@ -14,11 +14,11 @@ adopted repository and the procedures/validators that consume it.
 ## Top-level ownership
 
 The configuration is divided into project identity, stack, commands, paths, environments, tooling, index placement,
-mobile settings, corpus partitions, exclusion semantics, and thresholds. The `thresholds` section contains **228
+mobile settings, corpus partitions, exclusion semantics, and thresholds. The `thresholds` section contains **235
 direct runtime threshold keys** and is parsed strictly by the shared runtime config helper: duplicate direct threshold
 keys are refused rather than silently resolved first-wins/last-wins.
 
-## Complete 306-key index
+## Complete 313-key index
 
 | Dotted key | Source line | Shipped template value / shape |
 | --- | ---: | --- |
@@ -575,3 +575,16 @@ keys are refused rather than silently resolved first-wins/last-wins.
 
 See [Control Plane Catalog](C2COGNITIVE-CONTROL-PLANE-CATALOG.md) and
 [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md).
+## v1.0.1-v1.0.2 threshold additions
+
+These measured keys extend the public v1.0.0 configuration surface and are included in the 313-key / 235-threshold totals.
+
+| Dotted key | Source line | Shipped template value / shape |
+| --- | ---: | --- |
+| `thresholds.progress_external_wait_evidence_digest_required` | 250 | `true` |
+| `thresholds.workflow_convergence_enabled` | 253 | `true` |
+| `thresholds.workflow_convergence_no_progress_cycles_before_diagnosis` | 254 | `2` |
+| `thresholds.workflow_convergence_max_diagnoses_per_frontier` | 255 | `1` |
+| `thresholds.workflow_convergence_sticky_completion` | 256 | `true` |
+| `thresholds.workflow_convergence_verification_reuse` | 257 | `true` |
+| `thresholds.workflow_convergence_replan_reason_closed_list` | 258 | `true` |

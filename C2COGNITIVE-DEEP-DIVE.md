@@ -1,6 +1,6 @@
 # C2Cognitive v1.0.0 Deep Dive
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 **Author:** Hafizh Al-Banna
 
 > **Documentation status:** public explanatory guide. This file does not override `AGENTS.md`, `.agent/config.yml`, current scopes/runbooks/schemas, entry prompts, or executable validators. Where prose conflicts with an executable contract, surface the contradiction and follow the canonical contract.
@@ -167,11 +167,14 @@ scopes, runbooks, schemas, prompts, and validators. Start with
 
 ## 16. Full repository surface
 
-The architecture above explains the major cognitive mechanisms. C2Cognitive v1.0.0 also ships a wider operational
-surface: 39 Core rules, 45 routes, 10 non-template scopes, 40 non-template runbooks, 13 staged prompts, 95 Python
-scripts, 59 registered verification invocations, evaluation scaffolds, runtime schemas/state, and bundled
+The architecture above explains the major cognitive mechanisms. C2Cognitive v1.0.2 also ships a wider operational
+surface: 40 Core rules, 46 routes, 10 non-template scopes, 41 non-template runbooks, 13 staged prompts, 103 Python
+scripts, 63 registered verification invocations, evaluation scaffolds, runtime schemas/state, and bundled
 C2ModelAdapter v0.5.5.
 
 For exhaustive rather than conceptual coverage, use the [Repository Coverage Matrix](C2COGNITIVE-REPOSITORY-COVERAGE-MATRIX.md)
 and the linked catalogs. This prevents the Deep Dive from becoming a 1:1 duplicate of every executable file while
 still making omissions auditable.
+## Terminal reconciliation in v1.0.2
+
+Terminal execution truth now outranks stale continuity state. Successor creation is separately admitted by evidence and a consumable semantic claim identity, preventing ID rotation and repeated reconciliation from masquerading as progress.

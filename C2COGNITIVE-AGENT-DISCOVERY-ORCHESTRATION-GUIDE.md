@@ -1,6 +1,6 @@
 # C2Cognitive Agent, Discovery and Orchestration Guide
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 ## Purpose
 

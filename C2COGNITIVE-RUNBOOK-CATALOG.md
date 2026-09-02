@@ -1,10 +1,10 @@
 # C2Cognitive Runbook Catalog
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 ## Purpose
 
-C2Cognitive v1.0.0 ships 41 runbook files: 40 operational runbooks plus one template. This public catalog names all
+C2Cognitive v1.0.2 ships 42 runbook files: 41 operational runbooks plus one template. This public catalog names all
 of them so a repository visitor can see the actual procedure surface rather than only a curated subset.
 
 The runbooks themselves remain the operational procedures. This catalog is explanatory.
@@ -53,6 +53,7 @@ The runbooks themselves remain the operational procedures. This catalog is expla
 | [`tool-usage-capture.md`](.agent/runbooks/tool-usage-capture.md) | Shipped procedure | Runbook: Tool Usage Capture | A repository can contain operational knowledge across package scripts, build files, CI workflows, hooks, and documentation. This runbook scans the declared source classes together so commands are compared from observed evidence rather than inferred from one documentation surface. |
 | [`ui-audit.md`](.agent/runbooks/ui-audit.md) | Shipped procedure | Runbook: UI Audit | Every user-visible change, and before declaring release readiness. |
 | [`untrusted-content.md`](.agent/runbooks/untrusted-content.md) | Shipped procedure | Untrusted Repository Content | This runbook never grants target write permission. Any target write described here is legal only when the caller's entry mode or active-goal scope permits it and rollback/write authority has already been proven for that target. While authority is pending, compute or stage the decision only in session/host evidence that does not write `TARGET_ROOT`; if that evidence cannot be preserved externally, STOP. |
+| [`workflow-convergence.md`](.agent/runbooks/workflow-convergence.md) | Shipped procedure | Runbook: Workflow Convergence | Binds recovery to semantic frontier changes, sticky completion, closed-list invalidators, verification reuse, and terminal reconciliation so repeated audit/re-plan/reverification cannot become unbounded procedural churn. |
 | [`workflow-discipline.md`](.agent/runbooks/workflow-discipline.md) | Shipped procedure | Runbook: Workflow Discipline | A rulebook that is read but not followed can produce a compliance report unsupported by the executed steps. This runbook makes compliance **observable**: every turn carries a small, checkable declaration, and every violation has a named class and a fixed response. |
 
 ## Capability families represented by the runbooks

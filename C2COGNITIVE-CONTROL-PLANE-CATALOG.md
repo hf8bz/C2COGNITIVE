@@ -1,10 +1,10 @@
 # C2Cognitive Control Plane Catalog
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 ## Purpose
 
-This document is the public catalog for the C2Cognitive v1.0.0 control plane. It maps the stable router, Core
+This document is the public catalog for the C2Cognitive v1.0.2 control plane. It maps the stable router, Core
 invariants, routes, scopes, configuration, rule registry, distribution manifest, prefix lock, and adoption metadata
 without creating a second authority plane.
 
@@ -15,7 +15,7 @@ pieces relate.
 
 ```text
 AGENTS.md
-  -> 39 Core invariants + routing table
+  -> 40 Core invariants + routing table
   -> .agent/routes.yaml mirror
       -> .agent/scopes/*.md domain rules
       -> .agent/runbooks/*.md procedures
@@ -24,7 +24,7 @@ AGENTS.md
 
 The package also carries `.agent/config.yml` as the centralized project/threshold profile, `.agent/rule-registry.md`
 for stable rule identity, `.agent/prefix.lock` for router-prefix drift detection, `.agent/distribution-files.txt` for
-the 259-file executable template corpus, `.agent/counts.generated.json` for measured package counts, and
+the 271-file distribution manifest, `.agent/counts.generated.json` for measured package counts, and
 `.agent/runtime-artifacts.txt` to distinguish runtime-created paths from broken references.
 
 
@@ -36,9 +36,9 @@ additional repository documentation; the table below describes the original ship
 | Root file | Role |
 | --- | --- |
 | [`.gitattributes`](.gitattributes) | Repository text/line-ending attribute policy. |
-| [`AGENTS.md`](AGENTS.md) | Layer-1 router, 39 Core invariants, routing table, stop rules, anti-dumping boundary. |
+| [`AGENTS.md`](AGENTS.md) | Layer-1 router, 40 Core invariants, routing table, stop rules, anti-dumping boundary. |
 | [`BOOTSTRAP-NEW-REPO.prompt.md`](BOOTSTRAP-NEW-REPO.prompt.md) | New/empty-repository bootstrap entry prompt. |
-| [`CHANGELOG.md`](CHANGELOG.md) | C2Cognitive Core v1.0.0 Release 1 change history and bounded claim context. |
+| [`CHANGELOG.md`](CHANGELOG.md) | C2Cognitive Core release history through v1.0.2 and bounded claim context. |
 | [`CHECKLIST.md`](CHECKLIST.md) | Adoption/maturity checklist and progression criteria. |
 | [`CODEOWNERS`](CODEOWNERS) | Repository ownership metadata for hosting/VCS workflows. |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution expectations for changing the governed template. |
@@ -49,9 +49,9 @@ additional repository documentation; the table below describes the original ship
 | [`SCAN-AND-ADOPT.prompt.md`](SCAN-AND-ADOPT.prompt.md) | Existing-repository scan/adopt entry prompt that can proceed into Goal-bound implementation. |
 | [`SECURITY.md`](SECURITY.md) | Security reporting and security-boundary guidance. |
 | [`START-HERE.md`](START-HERE.md) | Shipped executable-edition entry-mode/start flow. |
-| [`VERSION`](VERSION) | Product version marker; must remain `1.0.0` for this release. |
+| [`VERSION`](VERSION) | Product version marker; must be `1.0.2` for this release. |
 
-## 39 Core invariants
+## 40 Core invariants
 
 The following descriptions are taken from the shipped `AGENTS.md` router. Public prose does not supersede them.
 
@@ -96,6 +96,7 @@ The following descriptions are taken from the shipped `AGENTS.md` router. Public
 | `CORE-37` | COMPLETENESS IS OFFERED, NOT ASSUMED. Adoption censuses missing tests, contracts, and rollbacks, then offers the work; writing it before a human answer is FORBIDDEN. |
 | `CORE-38` | GOALS ARE INHERITED, NOT RESTARTED. Prior goals and live state are collected, classified, and merged with lineage; deleting a prior goal during adoption is FORBIDDEN. |
 | `CORE-39` | COGNITIVE CONTAINMENT IS NOT WRITE AUTHORITY. Exact failure/lesson recall may be suppressed only by a short-lived human-granted CEA overlay; raw evidence remains visible, and durable ledger repair still requires normal write authority or BEA. ACRP/cache/model routing never grants CEA or repository authority. |
+| `CORE-40` | WORKFLOW CONVERGENCE. Procedural activity is not semantic progress; unchanged recovery is bounded to `STOP_BUSY_LIVELOCK`. AgentRun `COMPLETED` outranks stale open continuity and blocks same-run resume. A successor needs evidence-bound `terminal_successor` and a consumable claim ID. Re-plan needs a closed invalidator; PASS reuse and these rules never grant repository authority. |
 
 ## Routing and scope model
 
@@ -121,9 +122,9 @@ The router contains 45 routing rows. `.agent/routes.yaml` is checked against tha
 There are 11 scope files total, including `_TEMPLATE.md`, and 10 non-template domain scopes.
 
 
-## Complete 45-row routing table
+## Complete 46-row routing table
 
-The public table below mirrors the 45 trigger rows in `AGENTS.md`. The **runtime target** column preserves the shipped
+The public table below mirrors the 46 trigger rows in `AGENTS.md`. The **runtime target** column preserves the shipped
 route literally. The public companion column gives a root public explanation surface. Three shipped routes currently
 point into the internal engineering-reference tree; their public companions are shown here so those topics remain
 publicly documented without republishing the internal files.
@@ -175,13 +176,14 @@ publicly documented without republishing the internal files.
 | missing tests, missing contracts, an incomplete repository being adopted | ``.agent/runbooks/coverage-backfill.md`` | [C2COGNITIVE-RUNBOOK-CATALOG.md](C2COGNITIVE-RUNBOOK-CATALOG.md) |
 | a prior goal, live state from an earlier run, migrating an existing plan | ``.agent/runbooks/goal-inheritance.md`` | [C2COGNITIVE-INSTALL-ADOPT-BOOTSTRAP-GUIDE.md](C2COGNITIVE-INSTALL-ADOPT-BOOTSTRAP-GUIDE.md) |
 | a step cannot proceed, progress is unchanged/stagnant, repeated work, a red gate or wall | ``.agent/runbooks/blocker-handling.md`, `.agent/runbooks/progress-liveness.md`` | [C2COGNITIVE-BLOCKER-CONVERGENCE-GUIDE.md](C2COGNITIVE-BLOCKER-CONVERGENCE-GUIDE.md) |
+| repeated audit/re-plan/reverification, reopened completion, reasoning/workflow loop | ``.agent/runbooks/workflow-convergence.md`` | [C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md](C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md) |
 
 `scripts/verify/routes.py` validates the runtime routing mirror/targets in the installable Core. This public table is
 not used by the router and does not change route authority.
 
 ## Configuration ownership
 
-`.agent/config.yml` contains 306 measured configuration keys. Its top-level sections are:
+`.agent/config.yml` contains 313 measured configuration keys. Its top-level sections are:
 
 * `project` - project identity and profile values;
 * `stack` - language/framework/runtime placeholders;

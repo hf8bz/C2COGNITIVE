@@ -1,6 +1,6 @@
 # C2Cognitive v1.0.0 File Map
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 **Author:** Hafizh Al-Banna
 
 > **Documentation status:** public explanatory guide. This file does not override `AGENTS.md`, `.agent/config.yml`, current scopes/runbooks/schemas, entry prompts, or executable validators. Where prose conflicts with an executable contract, surface the contradiction and follow the canonical contract.
@@ -138,3 +138,10 @@ The main exhaustive catalogs are:
 * [Schema and Runtime State Catalog](C2COGNITIVE-SCHEMA-STATE-CATALOG.md)
 * [Prompt Catalog](C2COGNITIVE-PROMPT-CATALOG.md)
 * [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md)
+## v1.0.2 terminal files
+
+- `scripts/lib/c2terminal.py`
+- `scripts/handoff/terminal_reconcile.py`
+- `scripts/selftest/terminal_reconciliation.py`
+- `scripts/verify/terminal_reconciliation.py`
+- `docs/graph-engineering/87-terminal-reconciliation-successor-admission.md`

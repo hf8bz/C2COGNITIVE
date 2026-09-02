@@ -1,6 +1,6 @@
 # C2Cognitive v1.0.0 Reference
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 **Author:** Hafizh Al-Banna
 
 > **Documentation status:** public explanatory guide. This file does not override `AGENTS.md`, `.agent/config.yml`, current scopes/runbooks/schemas, entry prompts, or executable validators. Where prose conflicts with an executable contract, surface the contradiction and follow the canonical contract.
@@ -127,10 +127,13 @@ Use [C2COGNITIVE-DOCS-START-HERE.md](C2COGNITIVE-DOCS-START-HERE.md) for the com
 
 The compact reference above is supplemented by exhaustive catalogs:
 
-* [Control Plane Catalog](C2COGNITIVE-CONTROL-PLANE-CATALOG.md) - all 39 Core rules plus scope/router surfaces;
-* [Configuration Reference](C2COGNITIVE-CONFIGURATION-REFERENCE.md) - all 306 config keys and 228 thresholds;
-* [Runbook Catalog](C2COGNITIVE-RUNBOOK-CATALOG.md) - all 41 runbook files (40 procedures + template);
+* [Control Plane Catalog](C2COGNITIVE-CONTROL-PLANE-CATALOG.md) - all 40 Core rules plus scope/router surfaces;
+* [Configuration Reference](C2COGNITIVE-CONFIGURATION-REFERENCE.md) - all 313 config keys and 235 thresholds;
+* [Runbook Catalog](C2COGNITIVE-RUNBOOK-CATALOG.md) - all 42 runbook files (41 procedures + template);
 * [Schema and Runtime State Catalog](C2COGNITIVE-SCHEMA-STATE-CATALOG.md) - `.agent` schemas/state/metadata;
 * [Prompt Catalog](C2COGNITIVE-PROMPT-CATALOG.md) - 3 entry prompts + 13 staged/continuity prompts;
-* [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) - all 95 Python files and aggregate verifier topology;
+* [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) - all 103 Python files and aggregate verifier topology;
 * [Repository Coverage Matrix](C2COGNITIVE-REPOSITORY-COVERAGE-MATRIX.md) - every non-internal shipped path.
+## Terminal-reconciliation reference
+
+`COMPLETED` is non-resumable for the same run. `terminal_successor` carries predecessor binding, closed class, semantic delta, `basis_ref`, `basis_sha256`, and `basis_claim_id`. The claim identity is consumable once.

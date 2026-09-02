@@ -1,6 +1,6 @@
 # C2Cognitive Documentation  -  Start Here
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 **Author:** Hafizh Al-Banna
 
 > **Documentation status:** public explanatory guide. This file does not override `AGENTS.md`, `.agent/config.yml`, current scopes/runbooks/schemas, entry prompts, or executable validators. Where prose conflicts with an executable contract, surface the contradiction and follow the canonical contract.
@@ -79,12 +79,12 @@ For full-repository coverage rather than topic-only navigation, use:
 | Need | Public document |
 | --- | --- |
 | Prove every non-internal shipped path has a documentation owner | [Repository Coverage Matrix](C2COGNITIVE-REPOSITORY-COVERAGE-MATRIX.md) |
-| Inspect all 39 Core rules, scopes, and routing metadata | [Control Plane Catalog](C2COGNITIVE-CONTROL-PLANE-CATALOG.md) |
-| Inspect all 306 config keys and 228 thresholds | [Configuration Reference](C2COGNITIVE-CONFIGURATION-REFERENCE.md) |
+| Inspect all 40 Core rules, scopes, and routing metadata | [Control Plane Catalog](C2COGNITIVE-CONTROL-PLANE-CATALOG.md) |
+| Inspect all 313 config keys and 235 thresholds | [Configuration Reference](C2COGNITIVE-CONFIGURATION-REFERENCE.md) |
 | Inspect every shipped runbook | [Runbook Catalog](C2COGNITIVE-RUNBOOK-CATALOG.md) |
 | Inspect schemas and runtime-state surfaces | [Schema and Runtime State Catalog](C2COGNITIVE-SCHEMA-STATE-CATALOG.md) |
 | Inspect all entry/staged/resume prompts | [Prompt Catalog](C2COGNITIVE-PROMPT-CATALOG.md) |
-| Inspect all 95 scripts and 59 aggregate check invocations | [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
+| Inspect all 103 scripts and 63 registered check invocations | [Script and Verification Catalog](C2COGNITIVE-SCRIPT-VERIFICATION-CATALOG.md) |
 | Understand memory/Skills/structural/Wiki/failure/lesson lifecycle | [Cognitive State Lifecycle Guide](C2COGNITIVE-COGNITIVE-STATE-LIFECYCLE-GUIDE.md) |
 | Understand discovery, indexing, dispatch, loadouts, leases and batching | [Agent, Discovery and Orchestration Guide](C2COGNITIVE-AGENT-DISCOVERY-ORCHESTRATION-GUIDE.md) |
 | Understand domain scopes and mobile/payment/QA lanes | [Application Lanes Guide](C2COGNITIVE-APPLICATION-LANES-GUIDE.md) |
@@ -94,3 +94,6 @@ For full-repository coverage rather than topic-only navigation, use:
 The public-doc set is intentionally broader than a curated quick-start list because C2Cognitive v1.0.0 ships a large
 control-plane surface. The coverage matrix is the audit anchor when deciding whether a repo file/family is publicly
 represented.
+## v1.0.2 terminal hardening
+
+Start with `C2COGNITIVE-TERMINAL-RECONCILIATION-GUIDE.md` when a completed run appears resumable, when a stale cursor remains open, or when repeated successor runs are being created only to reconcile prior state.

@@ -1,6 +1,6 @@
 # C2Cognitive Evidence, Provenance and Assurance Guide
 
-**C2Cognitive v1.0.0  |  Release 1  |  30 August 2026**
+**C2Cognitive v1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 ## Purpose
 
@@ -53,7 +53,7 @@ The repository carries:
 * adversarial/fault/concurrency/security/regression harnesses;
 * adapter unit/simulation testing in the bundled adapter package.
 
-`verify/all.py` runs 59 registered invocations. Some checks can be vacuous in a pristine template; vacuity is reported
+`verify/all.py` registers 63 invocations. For the v1.0.2 freeze they were executed process-isolated after the aggregate wrapper timed out; all 63 passed per edition. Some checks can be vacuous in a pristine template; vacuity is reported
 rather than relabeled as populated behavior.
 
 ## Tests versus prose

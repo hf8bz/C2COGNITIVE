@@ -1341,39 +1341,6 @@ and executable validators.
 
 ---
 
-# Verification snapshot
-
-C2Cognitive v1.0.2 uses bounded current-tree evidence. The aggregate `verify/all.py` wrapper exhibited an
-orchestration timeout in this sandbox, so its interrupted run is counted as neither PASS nor repository FAIL. The
-registered checks were therefore rerun serially, each in a fresh process with an explicit timeout.
-
-| Surface | Result |
-| --- | ---: |
-| Registered process-isolated checks | **63/63 PASS EN + 63/63 PASS ID** |
-| Vacuous template-corpus observations | **8 per edition; populated selftest run separately PASS** |
-| Terminal reconciliation directed regression | **21/21 PASS per edition** |
-| Terminal reconciliation independent randomized oracle | **100,000 cases, 0 mismatches** |
-| Successor-chain simulation | **10,000 chains x 12 attempts, 0 claim-reuse violations** |
-| Assurance replay | **44/44 PASS per edition** |
-| Workflow Convergence | **current registered verifier + selftest PASS per edition** |
-| Progress Liveness | **current registered verifier + selftest PASS per edition** |
-| Runtime Resume | **current registered verifier + selftest PASS per edition** |
-| Blocker Convergence | **15/15 PASS per edition** |
-| Public-doc link resolution | **1,065 links checked; 0 issues** |
-| Flowchart compilation | **101/101 DOT have PNG + SVG; 0 issues** |
-| Clean-room v1.0.0 -> v1.0.2 patch parity | **298/298 exact paths + SHA-256 + file-mode parity, EN and ID** |
-
-The v1.0.0 Release 1 and v1.0.1 Corrective Release 2 results remain historical predecessor evidence and are not
-silently relabeled as v1.0.2 reruns. These results are finite deterministic/process/package evidence. They do
-**not** establish universal bug absence, universal security, arbitrary crash/power-loss safety, distributed-consensus
-safety, live-provider correctness or uptime, guaranteed cache-hit/latency/token/cost improvement, improved
-foundation-model reasoning, improved developer productivity, or correctness on every future OS/runtime/provider
-version.
-
-The correct release claim is therefore **bounded verification**, not universal proof.
-
----
-
 <details>
 <summary><strong>Full C2Cognitive v1.0.2 capability map</strong></summary>
 

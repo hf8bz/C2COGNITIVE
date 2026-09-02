@@ -1,16 +1,16 @@
 cff-version: 1.2.0
 
 message: >-
-  If you use C2Cognitive, please cite this v1.0.0 software release.
+  If you use C2Cognitive, please cite this v1.0.2 software release.
   For research use, cite the academic paper listed in preferred-citation.
 
 type: software
 
 title: "C2Cognitive: Convert to Cognitive Engineering"
 
-version: "1.0.0"
+version: "1.0.2"
 
-date-released: "2026-08-30"
+date-released: "2026-09-02"
 
 authors:
   - family-names: "Al-Banna"
@@ -18,9 +18,11 @@ authors:
     affiliation: "Independent Researcher; PT Arshaka Digital Media Kreasi"
 
 repository-code: "https://github.com/hf8bz/C2Cognitive"
-url: "https://github.com/hf8bz/C2Cognitive"
+url: "https://doi.org/10.5281/zenodo.22258449"
 
 license: MIT
+
+doi: "10.5281/zenodo.22258449"
 
 abstract: >-
   C2Cognitive (Convert to Cognitive Engineering) is a repository-governed
@@ -29,7 +31,7 @@ abstract: >-
   governs how evidence may be admitted, remembered, reused, promoted into
   Skills, represented as source-bound structural state, projected into a
   derived Wiki, exposed through bounded Agent Loadouts, and carried across
-  handoff or resume boundaries. C2Cognitive v1.0.0 includes typed L0-L3 Memory,
+  handoff or resume boundaries. C2Cognitive v1.0.2 includes typed L0-L3 Memory,
   provenance and freshness controls, exact write and rollback authority,
   Bounded Read v2, Adaptive Context Representation Planning, cognitive and
   repository emergency controls, progress-liveness self-audit, workflow and
@@ -70,11 +72,11 @@ preferred-citation:
       given-names: "Hafizh"
       affiliation: "Independent Researcher; PT Arshaka Digital Media Kreasi"
 
-  doi: "10.5281/zenodo.22172273"
-  url: "https://doi.org/10.5281/zenodo.22172273"
+  doi: "10.5281/zenodo.22258507"
+  url: "https://doi.org/10.5281/zenodo.22258507"
 
   year: 2026
-  date-published: "2026-08-30"
+  date-published: "2026-09-02"
   status: preprint
   license: CC-BY-4.0
   languages:

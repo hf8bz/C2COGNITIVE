@@ -13,12 +13,14 @@ state to silently become repository-write authority.
 [![Registered checks](https://img.shields.io/badge/registered_checks-63%2F63_EN_%7C_63%2F63_ID-brightgreen)](#verification-snapshot)
 [![Terminal regression](https://img.shields.io/badge/terminal_regression-21%2F21_EN_%7C_21%2F21_ID-brightgreen)](#verification-snapshot)
 [![Adapter](https://img.shields.io/badge/C2ModelAdapter-v0.5.5-blue)](adapter/C2ModelAdapter-v0.5.5/README.md)
-[![v1.0.0 Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
+[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22258507.svg)](https://doi.org/10.5281/zenodo.22258507)
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22258449.svg)](https://doi.org/10.5281/zenodo.22258449)
 
 **Version 1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
 
 [Release Notes](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.2)  |
-[v1.0.0 Paper](https://doi.org/10.5281/zenodo.22172273)  |
+[Paper](https://doi.org/10.5281/zenodo.22258507)  |
+[Software DOI](https://doi.org/10.5281/zenodo.22258449)  |
 [Docs Start](C2COGNITIVE-DOCS-START-HERE.md)  |
 [Deep Dive](C2COGNITIVE-DEEP-DIVE.md)  |
 [Reference](C2COGNITIVE-REFERENCE.md)  |
@@ -1519,34 +1521,50 @@ Research papers and publication artifacts are maintained separately from the sof
 
 ---
 
-# Research
+# Research and archival identifiers
 
-The currently assigned Zenodo DOI belongs to the **v1.0.0 Release 1 paper**, not to the v1.0.2 software release:
+C2Cognitive v1.0.2 uses separate Zenodo DOI records for the research paper and the software release.
+They are related, but they identify different citable objects.
+
+### Release paper
 
 **C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents**
 
-**Author:** Hafizh Al-Banna
+**Author:** Hafizh Al-Banna  
+**Version:** C2Cognitive Core v1.0.2  
+**Release date:** 2 September 2026  
+**Publication type:** Preprint / release paper  
+**Publisher:** Zenodo  
+**Paper DOI:** [10.5281/zenodo.22258507](https://doi.org/10.5281/zenodo.22258507)
 
-**Publication date:** 30 August 2026
+[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22258507.svg)](https://doi.org/10.5281/zenodo.22258507)
 
-**Publication type:** Preprint
+### Software release
 
-**Publisher:** Zenodo
+**C2Cognitive Core v1.0.2**  
+**Author:** Hafizh Al-Banna  
+**Release date:** 2 September 2026  
+**Artifact type:** Software  
+**Publisher:** Zenodo  
+**Software DOI:** [10.5281/zenodo.22258449](https://doi.org/10.5281/zenodo.22258449)
 
-**Paper DOI:** [10.5281/zenodo.22172273](https://doi.org/10.5281/zenodo.22172273)
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22258449.svg)](https://doi.org/10.5281/zenodo.22258449)
 
-[![v1.0.0 Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22172273.svg)](https://doi.org/10.5281/zenodo.22172273)
+### Recommended citations
 
-The v1.0.2 Release Paper is a separate publication object. This README does **not** reuse the
-v1.0.0 DOI as a v1.0.2 DOI. A v1.0.2 paper DOI should be added only after Zenodo actually assigns it.
-
-### Recommended citation for the published predecessor paper
+Paper:
 
 > Hafizh Al-Banna (2026). *C2Cognitive Core: Evidence-Bounded Persistent Cognition for AI Coding Agents*.
-> C2Cognitive Core v1.0.0, Release 1. Zenodo. https://doi.org/10.5281/zenodo.22172273
+> C2Cognitive Core v1.0.2. Zenodo. https://doi.org/10.5281/zenodo.22258507
 
-The paper and software repository are related but distinct research objects. The predecessor paper DOI identifies the
-published v1.0.0 paper; this repository currently identifies the v1.0.2 software release.
+Software:
+
+> Hafizh Al-Banna (2026). *C2Cognitive Core v1.0.2*. Software. Zenodo.
+> https://doi.org/10.5281/zenodo.22258449
+
+Use the paper DOI when citing the research manuscript and the software DOI when citing the released software
+artifact. DOI identity is publication/archive metadata; it does not create repository-write authority or replace
+current repository evidence.
 
 ---
 

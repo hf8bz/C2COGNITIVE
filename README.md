@@ -8,17 +8,17 @@ C2Cognitive makes durable agent cognition more **bounded, inspectable, evidence-
 auditable** without allowing remembered knowledge, Skills, Wiki state, worker output, model-routing state, or cache
 state to silently become repository-write authority.
 
-[![Release](https://img.shields.io/badge/release-v1.0.2-blue)](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.2)
+[![Release candidate](https://img.shields.io/badge/candidate-v1.1.19-lightgrey)](https://github.com/hf8bz/C2COGNITIVE)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Registered checks](https://img.shields.io/badge/registered_checks-63%2F63_EN_%7C_63%2F63_ID-brightgreen)](#verification-snapshot)
-[![Terminal regression](https://img.shields.io/badge/terminal_regression-21%2F21_EN_%7C_21%2F21_ID-brightgreen)](#verification-snapshot)
+[![Historical registered checks v1.0.2](https://img.shields.io/badge/historical_checks-v1.0.2-lightgrey)](https://github.com/hf8bz/C2COGNITIVE/releases/tag/v1.0.2)
+[![Historical terminal checks v1.0.2](https://img.shields.io/badge/historical_terminal-v1.0.2-lightgrey)](https://github.com/hf8bz/C2COGNITIVE/releases/tag/v1.0.2)
 [![Adapter](https://img.shields.io/badge/C2ModelAdapter-v0.5.5-blue)](adapter/C2ModelAdapter-v0.5.5/README.md)
 [![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22258507.svg)](https://doi.org/10.5281/zenodo.22258507)
 [![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22258449.svg)](https://doi.org/10.5281/zenodo.22258449)
 
-**Version 1.0.2  |  Corrective Release 3  |  Public release  |  2 September 2026**
+**Version 1.1.19  |  Publication candidate  |  29 October 2026**
 
-[Release Notes](https://github.com/hf8bz/C2Cognitive/releases/tag/v1.0.2)  |
+[Previous public release](https://github.com/hf8bz/C2COGNITIVE/releases/tag/v1.0.2)  |
 [Paper](https://doi.org/10.5281/zenodo.22258507)  |
 [Software DOI](https://doi.org/10.5281/zenodo.22258449)  |
 [Docs Start](C2COGNITIVE-DOCS-START-HERE.md)  |
@@ -26,11 +26,26 @@ state to silently become repository-write authority.
 [Reference](C2COGNITIVE-REFERENCE.md)  |
 [Entry Modes](C2COGNITIVE-ENTRY-MODE-DECISION-MATRIX.md)  |
 [File Map](C2COGNITIVE-FILE-MAP.md)  |
-[Changelog](CHANGELOG.md)
+[Changelog](CHANGELOG.md)  |
+[New Feature Guides](C2COGNITIVE-V1.1.19-FEATURE-GUIDES.md)
 
 ---
 
-## What's new in v1.0.2
+## What's new in v1.1.19
+
+This is the frozen local v1.1.19 baseline, not an already-published GitHub release. The previous public release is v1.0.2. Existing v1.0.2 paper/software DOI links remain historical identifiers until a new archive is published.
+
+- Subject-bound application assurance and explicit scenario coverage.
+- Universal capabilities and selectable domain runbooks, including accounting/temporal rules that require actual project policy.
+- Controlled security testing, resource budgets, safe temporary files and distribution snapshots.
+- Bounded audit orchestration and non-destructive, manifest-guarded source export.
+- Cognitive boundary: recalled memory, Skills and Wiki can suggest checks but cannot substitute for current source evidence or grant writes.
+
+[New Feature Guides](C2COGNITIVE-V1.1.19-FEATURE-GUIDES.md) provides user-facing feature explanations only. Release proof and internal audit artifacts are deliberately excluded.
+
+---
+
+## Historical: what changed in v1.0.2
 
 C2Cognitive v1.0.2 hardens the boundary between terminal execution truth and continuity bookkeeping. A stale
 `open` cursor cannot reactivate an AgentRun that is already `COMPLETED`. A new successor is admitted only after
@@ -220,7 +235,7 @@ A cache miss must remain a correct execution path.
 
 ---
 
-# What ships in v1.0.2
+# Historical: what shipped in v1.0.2
 
 C2Cognitive v1.0.2 is the current corrective Core release. It retains the Version 1 architecture while hardening
 workflow convergence, progress-state admission, external-wait evidence, and resume composition.
@@ -267,6 +282,75 @@ Major capability families include:
 This is a capability map, not a claim that every possible defect or operating condition has been eliminated.
 
 ---
+
+
+## What changes in the existing workflow
+
+The new distribution remains an extension of the existing three-layer model. It does **not** replace the active Goal, CORE rules, canonical `ACTUAL_WRITE_SET`, rollback, or terminal reconciliation.
+
+### Before vs. current conditional route
+
+```text
+Before: Goal -> scoped runbooks -> exact write plan -> authorized effect -> verification -> terminal/handoff
+Now:    Goal -> optional capability selector -> selected runbooks -> existing exact write plan
+        -> authorized effect -> existing verification + applicable assurance obligations
+        -> completion gate / blocker / terminal handoff
+```
+
+### Changes by execution plane
+
+| Plane | What is added | Does it replace the old process? |
+|---|---|---|
+| Discovery | On-demand capability selection and dependency closure | No; selected runbooks only |
+| Goal / write | Application assurance obligations and a completion-readiness decision | No; writes still require the Goal and exact plan |
+| Security | Bounded test-result ledger and failure/retest lineage | No; authorization and security scope remain separate |
+| Continuity | Optional compaction-hook advisory with terminal revalidation | No; the existing handoff/state remains authoritative |
+| QA / resource | Finite audit, allowlisted fixtures, snapshot verify and no-overwrite restore | No; these are auxiliary release and recovery gates |
+
+### What happens when an obligation is blocked
+
+```text
+Selected capability -> required obligation -> fresh subject evidence?
+  no / missing / unknown -> BLOCKED or NOT-RUN -> record blocker -> handoff/suspend
+  yes -> independent verification -> valid applicable gate -> existing completion logic
+```
+
+A readiness gate is not deployment permission. An advisory model/selector result cannot create write authority. Hook delivery must be verified in the real host before calling it active.
+
+### Feature-by-feature workflow guides
+
+- [Universal Capability Routing](C2COGNITIVE-UNIVERSAL-CAPABILITY-GUIDE.md)
+- [Application Capability Profile and Assurance Completion](C2COGNITIVE-APPLICATION-ASSURANCE-GUIDE.md)
+- [Ledger, Reconciliation and Period-Close Assurance](C2COGNITIVE-LEDGER-PERIOD-CLOSE-GUIDE.md)
+- [Bounded Security Testing and Failure Lineage](C2COGNITIVE-SECURITY-VERIFICATION-GUIDE.md)
+- [Compaction Hooks and Resume Boundaries](C2COGNITIVE-HOOKS-RESUME-GUIDE.md)
+- [Bounded Resource and Temporary Workspace Controls](C2COGNITIVE-RESOURCE-BOUNDARIES-GUIDE.md)
+- [Allowlisted Snapshot, Verification and Restore](C2COGNITIVE-SNAPSHOT-BACKUP-RESTORE-GUIDE.md)
+- [Finite Automated Audit and Release Gate](C2COGNITIVE-AUDIT-OPERATIONS-GUIDE.md)
+- [Guarded Version Migration and Workflow Continuity](C2COGNITIVE-MIGRATION-UPGRADE-GUIDE.md)
+- [Cognitive Evidence, Recall and Assurance Non-Amplification](C2COGNITIVE-COGNITION-ASSURANCE-BOUNDARY-GUIDE.md)
+
+### How the additions are actually invoked
+
+`AGENTS.md` routes a relevant request to selected runbooks. The universal planner is an explicit read-only command, while `scripts/assurance/application.py` must be invoked with a project profile and obligation list to evaluate application readiness. `scripts/verify/all.py` runs framework verifiers/selftests, but does not by itself test a new adopter application or invoke its real application completion gate. Hook delivery likewise depends on host configuration and observed events.
+
+### Not changed
+
+- The three entry modes (`ADOPT_WITH_GOAL`, `WORKFLOW_ONLY`, `BOOTSTRAP`) and Core authority precedence are retained.
+- An existing terminal run stays terminal even when HANDOFF/CURSOR contains stale `open` state.
+- Approval, rollback basis, fresh pre-state and exact write scope remain independent gates.
+- Native host hook delivery, real adopter E2E and official public-asset patch replay are not established by these public guides.
+- Unselected industry modules are never automatically imported into a project.
+
+### Illustrative flow: payment callback after a closed period
+
+1. A project capability profile confirms `payments`, `webhooks` and `accounting`; policy ownership and jurisdiction are identified.
+2. The router selects corresponding runbooks and the application gate enumerates idempotency, signature, ledger and period-lock obligations.
+3. The provider callback is checked with a real authorized test: duplicate delivery must not create a second business effect.
+4. The period-close policy determines whether to reject, adjust or record a reversal; the agent cannot invent that decision.
+5. If policy/authorization/evidence is unresolved, the obligation remains blocked. Goal completion cannot be claimed from a passing UI snapshot.
+6. If a fix is authorized, existing exact-write, rollback, fresh pre-state and verification still apply.
+
 
 # How C2Cognitive is structured
 
@@ -1260,6 +1344,11 @@ It does not override those executable contracts.
 
 # Public documentation surface
 
+## v1.1.19 additional feature guides
+
+[New Feature Guides](C2COGNITIVE-V1.1.19-FEATURE-GUIDES.md). The established public guides below are retained for compatibility; their old version-specific inventories should not be read as current v1.1.19 counts.
+
+
 C2Cognitive v1.0.2 uses a repository-root public documentation layer. The public docs do not replace the control
 plane; they explain and map it. The current public layer is deliberately broader than the original C2GRAPH-style
 surface because C2Cognitive has persistent-cognition, state, orchestration, and verifier families that need their own
@@ -1467,7 +1556,19 @@ the product stack.
 
 ---
 
-# Release assets
+# Proposed release assets for v1.1.19
+
+- `C2Cognitive-v1.1.19-English-Repo.zip` - source edition EN.
+- `C2Cognitive-v1.1.19-Indonesia-Repo.zip` - source edition ID.
+- `C2Cognitive-v1.0.2-to-v1.1.19-English-GUARDED-UPGRADE.zip` - conditional guarded upgrade EN.
+- `C2Cognitive-v1.0.2-to-v1.1.19-Indonesia-GUARDED-UPGRADE.zip` - conditional guarded upgrade ID.
+- `C2Cognitive-v1.1.19-PUBLIC-FEATURE-GUIDES-EN-ID.zip` - explanatory guides only.
+
+Guarded patch admission must be checked against the official v1.0.2 asset bytes before publication. Do not treat the old migration to v1.0.2 as a migration to v1.1.19.
+
+---
+
+# Previous public v1.0.2 release assets
 
 The public software release is intentionally **repo-only**.
 
